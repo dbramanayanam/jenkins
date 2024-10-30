@@ -1,11 +1,11 @@
 pipeline {
     agent {
         label 'java-project'
-        enviromment {
+    }
+    environment {
           NAME = 'dinesh babu Ramayanam'
           }
-    }
-
+    
     stages {
         stage('build') {
             steps {
