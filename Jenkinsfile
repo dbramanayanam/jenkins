@@ -43,7 +43,7 @@ pipeline {
         """
     }
     unsuccessful {
-        echo 'This will execute when the job is failed'
+        echo 'This will execute at them time of job failed'
     }
   }
  }
