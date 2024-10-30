@@ -6,7 +6,7 @@ pipeline {
           NAME = 'dinesh babu Ramayanam'
           }
     parameters {
-        choice(name: 'CHOICE', choices: ['prod', 'dev', 'test'], description: 'select the environment)'
+        choice(name: 'CHOICE', choices: ['prod', 'dev', 'test'], description: 'select the environment')
     }
     
     stages {
@@ -44,5 +44,5 @@ pipeline {
     unsuccessful {
         echo 'This will execute when the job is failed'
     }
- }
+  }
 }
