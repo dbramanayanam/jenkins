@@ -32,6 +32,7 @@ pipeline {
               echo "choice: ${params.CHOICE}"
           }
      }  
+    }
   post { 
     always {
         echo 'This will execute always when job executed'
@@ -46,4 +47,3 @@ pipeline {
     }
   }
  }
-}
