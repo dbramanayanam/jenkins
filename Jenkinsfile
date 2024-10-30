@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'java-project'
     }
+    enviromment {
+        NAME = 'dinesh babu Ramayanam'
+    }
     stages {
         stage('build') {
             steps {
@@ -21,10 +24,12 @@ pipeline {
     }  
   post { 
     always {
-        echo 'This will execute alway when job executed'
+        echo 'This will execute always when job executed'
     }
     success {
-        echo 'This will execute only when the job is successfuol'
+        sh """
+          echo "My name is $NAME"
+        """
     }
     unsuccessful {
         echo 'This will execute when the job is failed'
