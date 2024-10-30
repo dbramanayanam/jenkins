@@ -45,4 +45,5 @@ pipeline {
         echo 'This will execute when the job is failed'
     }
   }
+ }
 }
