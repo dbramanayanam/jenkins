@@ -5,9 +5,10 @@ pipeline {
     environment {
           NAME = 'dinesh babu Ramayanam'
           }
-    options {
-        timeout(time: 1, unit: 'SECONDS')
+    parameters {
+        choice(name: 'CHOICE', choices: ['prod', 'dev', 'test'], description: 'select the environment)'
     }
+    
     stages {
         stage('build') {
             steps {
@@ -22,11 +23,15 @@ pipeline {
         stage('deploy') {
             steps {
                 sh """
-                   sleep 100
+                   echo "This stage is Deployment stage"
                 """
             }
         }
-    }  
+        stage('buildwithpram')
+          steps {
+              echo "choice: ${params.CHOICE}"
+          }
+     }  
   post { 
     always {
         echo 'This will execute always when job executed'
