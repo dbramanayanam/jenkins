@@ -5,7 +5,9 @@ pipeline {
     environment {
           NAME = 'dinesh babu Ramayanam'
           }
-    
+    options {
+        timeout(time: 1 unit: 'SECONDS')
+    }
     stages {
         stage('build') {
             steps {
@@ -19,7 +21,9 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                echo 'This is Build3'
+                sh """
+                   sleep 100
+                """
             }
         }
     }  
