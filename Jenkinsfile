@@ -1,17 +1,19 @@
 pipeline {
-    agent any
+    agent {
+        label 'java-project'
+    }
     stages {
-        stage('build-1') {
+        stage('build') {
             steps {
                 echo 'This is build 1'
             }
         }
-        stage('build-2') {
+        stage('Configure') {
             steps {
                 echo 'This is build 2'
             }
         }
-        stage('build-3') {
+        stage('deploy') {
             steps {
                 echo 'This is Build3'
             }
