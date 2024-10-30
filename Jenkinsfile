@@ -6,7 +6,7 @@ pipeline {
           NAME = 'dinesh babu Ramayanam'
           }
     options {
-        timeout(time: 1 unit: 'SECONDS')
+        timeout(time: 1, unit: 'SECONDS')
     }
     stages {
         stage('build') {
