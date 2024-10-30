@@ -18,9 +18,8 @@ pipeline {
                 echo 'This is Build3'
             }
         }
-    } 
-}
-post { 
+    }  
+  post { 
     always {
         echo 'This will execute alway when job executed'
     }
@@ -30,4 +29,5 @@ post {
     unsuccessful {
         echo 'This will execute when the job is failed'
     }
+ }
 }
