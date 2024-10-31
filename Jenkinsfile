@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'java-project'
+        label 'java-agent'
     }
     environment {
           NAME = 'dinesh babu Ramayanam'
