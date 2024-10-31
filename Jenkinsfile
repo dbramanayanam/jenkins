@@ -3,7 +3,7 @@ pipeline {
         label 'java-agent'
     }
     environment {
-          NAME = 'dinesh babu Ramayanam'
+          NAME = 'dinesh babu R'
           }
     parameters {
         choice(name: 'CHOICE', choices: ['prod', 'dev', 'test'], description: 'select the environment')
