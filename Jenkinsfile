@@ -6,11 +6,14 @@ pipeline {
           NAME = 'dinesh babu Ramayanam'
           }
     parameters {
-        choice(name: 'CHOICE', choices: ['prod', 'dev', 'test'], description: 'select the environment')
+        choice(name: 'action', choices: ['build', 'destroy'], description: 'select the action')
     }
     
     stages {
         stage('build') {
+            when {
+                 expression { params.action == "build" }
+                }
             steps {
                 echo 'This is build 2'
             }
@@ -21,17 +24,15 @@ pipeline {
             }
         }
         stage('deploy') {
+             when {
+                 expression { params.action == "deploy" }
+                }
             steps {
                 sh """
                    echo "This stage is Deployment stage"
                 """
             }
         }
-        stage('buildwithpram') {
-          steps {
-              echo "choice: ${params.CHOICE}"
-          }
-     }  
     }
   post { 
     always {
