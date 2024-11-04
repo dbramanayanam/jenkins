@@ -6,7 +6,7 @@ pipeline {
           NAME = 'dinesh babu Ramayanam'
           }
     parameters {
-        choice(name: 'action', choices: ['build', 'destroy'], description: 'select the action')
+        choice(name: 'action', choices: ['build', 'deploy'], description: 'select the action')
     }
     
     stages {
